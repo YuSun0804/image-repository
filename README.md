@@ -1,19 +1,9 @@
 # image-repository
 
-## system requirement
-- mysql 8
-- java 13
+![vm_directory]({{ "/screenshot/index.png" | absolute_url}})
 
-## set up process
-- create database 
-```sql
-create database image_repository;
-```
-- create user
-```sql
-create user "shopify"@"localhost" indetified by "shopify";
-```
-- grant privilege
-```sql
-grant all privileges on image_repository.* to "shopify"@"localhost";
-```
+I implement the project by java with spring boot.
+
+## system requirement
+- elasticsearch 7.9.1
+- java 13

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Repo</title>
+    <link rel="stylesheet" href="css/imageRepo.css">
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    function getImageList() {
+        const data = {
+            text: $('#searchText').val(),
+            lowPrice: $('#lowPrice').val(),
+            highPrice: $('#highPrice').val(),
+            sortBy: $('#sortBy').children("option:selected").val(),
+            categories: $('#category').children("option:selected").val()
+        };
+        $.ajax({
+            method: "POST",
+            url: "/elastic/search",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data)
+        }).done(function (images) {
+            $('#resultList').empty();
+            images.forEach(function (image) {
+                const { title, url, description, price } = image;
+                const result = $("<div class='resultListImgWrapper' id='" + title + "'><img src='" + url + "'><div>" + title + "</div><div>" + description +"</div><div>" + price + "</div></div>");
+                $('#resultList').append(result);
+            });
+        });
+    };
+    $(document).ready(function () {
+        getImageList();
+        $("#searchText").change(function (){
+            getImageList();
+        });
+        $("#lowPrice").change(function (){
+            getImageList();
+        });
+        $("#highPrice").change(function (){
+            getImageList();
+        });
+        $("#sortBy").change(function (){
+            getImageList();
+        });
+        $("#category").change(function (){
+            getImageList();
+        });
+    });
+</script>
+<body>
+    <div class="mainPage">
+        <div class="titleBanner">
+            <div class="title">Yu's Image Repository</div>
+            <div class="actionBar">
+                <div class="login">Log in</div>
+                <div class="upload">
+                    Upload
+                </div>
+            </div>
+        </div>
+        <div class="searchBar">
+            <div class="searchBarForm">
+                <button type="submit" class="searchButton"></button>
+                <input type="text" placeholder="Search images" name="search" class="searchInput" id="searchText">
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="toolbarContainer">
+                <div class="priceRange">
+                    <span>Price range:</span>
+                    <span>$</span>
+                    <input type="text" class="lowPrice" placeholder="0" id="lowPrice">
+                    <span>-</span>
+                    <span>$</span>
+                    <input type="text" class="highPrice" placeholder="9999" id="highPrice">
+                </div>
+                <div class="sortBy">
+                    <span>Sort by:</span>
+                    <select name="sortBy" id="sortBy">
+                        <option value="1">Name: A-Z</option>
+                        <option value="2">Name: Z-A</option>
+                        <option value="3">Price: Low-High</option>
+                        <option value="4">Price: High-Low</option>
+                    </select>
+                </div>
+                <div class="categories">
+                    <span>Category:</span>
+                    <select name="category" id="category">
+                        <option value="0">All</option>
+                        <option value="1">Animals</option>
+                        <option value="2">Food</option>
+                        <option value="3">Nature</option>
+                        <option value="4">People</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="resultList" id="resultList">
+        </div>
+    </div>
+</body>
+
+</html>

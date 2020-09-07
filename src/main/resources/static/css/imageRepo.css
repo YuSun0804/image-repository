@@ -1,0 +1,134 @@
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+.titleBanner {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 0 60px rgba(0,0,0,.12);
+    justify-content: space-between;
+}
+.actionBar {
+    display: flex;
+    flex-direction: row;
+    margin-right: 16px;
+}
+.title {
+    margin-left: 16px;
+    color: #191b26;
+    font-size: 24px;
+    align-self: center;
+}
+.login {
+    align-self: center;
+    color: #191b26;
+    font-size: 16px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.upload {
+    align-self: center;
+    border-radius: 50px;
+    background-color: #02be6e;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px 24px;
+    text-shadow: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+.searchBar {
+    background-image: url('../images/searchBanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 528px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.searchBarForm {
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+    padding: 18px 0;
+    width: 664px;
+}
+.searchButton {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: url('../images/searchIcon.png'), no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: .75;
+    transition: opacity .3s;
+    cursor: pointer;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.searchInput {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    margin-right: 18px;
+    outline: none;
+}
+input:active {
+    outline: none;
+}
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    justify-content: flex-end;
+    border-bottom: 1px solid #f0f1f4;
+    background: #e8eaec;
+}
+.toolbar span {
+    color: #191b26;
+    opacity: .8;
+    transition: .2s;
+    white-space: nowraps;
+    font-size: 14px;
+}
+.toolbar input {
+    width: 32px;
+}
+.priceRange, .sortBy, .categories {
+    margin-right: 16px;
+}
+.toolbarContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.resultList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 16px;
+    justify-content: center;
+}
+.resultListImgWrapper {
+    margin-left:16px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resultListImgWrapper img {
+    height: 295px;
+}

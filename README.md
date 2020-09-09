@@ -10,9 +10,13 @@ Besides, the project based on spring boot 2.2.0 with java 13. Using the Docker t
 
 ## Building
 - To build jar file, run
-```./build.sh```
+```
+./build.sh
+```
 - To build docker component, run
-```docker-compose build```
+```
+docker-compose build
+```
 
 ## Running
 - Run:

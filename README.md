@@ -24,7 +24,7 @@ docker-compose build
 docker-compose up
 ```
 
-## source code
+## Source Code
 ![avator](https://github.com/YuSun09/image-repository/blob/master/screenshot/code.png)
 
 - controller (based on spring MVC) 

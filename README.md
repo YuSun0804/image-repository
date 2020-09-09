@@ -25,7 +25,7 @@ docker-compose up
 ```
 
 ## Source Code
-![](./screenshot/code.png)<!-- .element height="50%" width="50%" -->
+![code-w150](./screenshot/code.png)
 
 - controller (based on spring MVC) 
 - repository (CRUD operation of elasticsearch)

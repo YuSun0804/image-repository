@@ -7,6 +7,7 @@ Besides, the project based on spring boot 2.2.0 with java 13. Using the Docker t
 
 ## System dependencies
 - Docker [how to install docker](https://docs.docker.com/engine/installation/)
+- Docker Compose
 
 ## Building
 - To build jar file, run
